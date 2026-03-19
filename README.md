@@ -63,7 +63,7 @@ Which are the phase objetives?
 
 # tech_constraints.md
 - This section documents **stack choices in the project**
-- What tecnical solutions we must use to meet the project and scope objectives?
+- What technical solutions we must use to meet the project and scope objectives?
 
 # active_context.md
 - A scope is composed by value delivery tasks - VDT.
