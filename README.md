@@ -92,7 +92,16 @@ Which are the phase objetives?
 - Scope 2
 
 ### Under Development
+Which scope is under development by the agent now?
+- Scope 3
+
 
 ### To be done
-- Scope 3
 - Scope 4
+- Scope 5
+
+### Key decisions to be made and Open Issues
+Open decisions and choices that affects the project solution and not decided yet
+- Decision 1
+- Decision 2
+  
