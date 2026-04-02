@@ -1,107 +1,96 @@
-This README documents what is objective and the scaffold with the appropriate headers and placeholders for each file from the memory bank stucture.
-When updating the files, follow these instructions keeping the appropriate headers and placeholders (if any) to ensure the files are updated correctly.
+# Lightweight Agent Orchestration via Files
 
-# project_brief.md
-- Describe the overall project goals.
+This repository uses a lightweight agent orchestration layer built from plain files instead of a dedicated orchestration framework.
 
-## Problem 
-- What is the problem the project aiming to to solve and why we want to solve it?
+The goal is to make coding-agent behavior more predictable by separating:
 
-## Objectives
-- What result we want to see in the end of the project?
+* **repository-wide operating rules** in `AGENTS.md`
+* **project and execution state** in `memory_bank/`
+* **reusable workflows** in `.agents/skills/`
 
-## Organization
-Some project have very clear boundaries since the begining.
-When it's case we use this section to explain give an overview of projec phases.
-In general phases are a feature, a user story, a subsystem.
-On this Heading we list the project phases:
+## Why this exists
 
-- Phase 1
-- Phase 2
-- Phase N
-  
-## Phase N: Phase name
-Each phase is described at a high level on this section.
-In general phases are a feature, a user story, a subsystem. Our user stories pages can be used to describe the phase.
+Coding agents are good at local execution but often inconsistent at:
 
-### Objective
-Which are the phase objetives?
+* loading the right project context
+* planning work at the right level
+* preserving durable decisions
+* reconciling implementation with prior plans
 
-### Key elements
-- What are the desired user flows or key solution outputs?
+This repository addresses that by introducing a small file-based structure that helps the agent reason in consistent modes.
 
-### Out of Scope, No Gos and Open Questions
-- Situations, edge cases, or any technical implementation we're chosing not to build in the current scope
+## Structure
 
-# scope_context.md
-- A project is composed by one or more scopes.
-- Scopes are integrated "slices" of work. Think of it like phases with very integrated pieces of work. They reflect meaningful parts of the problem that can be completed **independently** or with very little dependence on other project scopes. Ideally they integrate frontend and backend.
-- Each scope delivers a clear and testable increment, they easy code review process by avoiding context switching and keeping code changes under a trackable amount of files (less than 10 files ideally).
-- This section explains in more detail the scope under development on the project right now.
+### `AGENTS.md`
 
-## Scope Name
-- What is the scope under development on the project right now?
+Defines stable repository-wide guidance, including:
 
-## Scope objective
-- This is the actual piece or "slice" of work being built.
-- High level objetive phrase descrbing what needs to be done.
+* workflow selection
+* behavior rules
+* documentation standards
+* design principles
 
-## Scope Description
-- Why this scope is needed
-- How does it connect to others scopes delivered and to be done?
+### `memory_bank/`
 
-## Key elements
-- What are the key solution elements that define the current scope?
-- What are the must have for the solution given scope?
+Stores project state and long-lived context.
 
-## Out of scope and No-Gos
-- Situations, edge cases, or any technical implementation we're chosing not to build in the current scope
+Typical contents include:
 
-# system_pattern.md
-- This section documents what are the overall **design patterns in the project**
-- What is the project architecture? What the architectural choices that build the logic required in the project?
+* `project_brief.md`
+* `system_patterns.md`
+* `tech_context.md`
+* `scope_context.md`
+* `active_context.md`
+* `progress.md`
 
-# tech_constraints.md
-- This section documents **stack choices in the project**
-- What technical solutions we must use to meet the project and scope objectives?
+The folder also includes:
 
-# active_context.md
-- A scope is composed by value delivery tasks - VDT.
-- VDT are required pieces of work to complete a given scope.
-- This section documents what are the needed VDT needed to complete a given scope and any relevant detail to be considered to build the VDTs
+* `memory_bank/README.md` — explains reading order, update policy, and workflow usage
+* `memory_bank/scaffolds.md` — defines the scaffold for each memory bank file
 
-## VDTs
-- Use the format below to document completed and pending value delivery tasks <br> <br>
-[ ] Value Delivery task to be done <br>
-[x] Value Delivery task Done
+### `.agents/skills/`
 
-## Important notes regarding the building phase or implementation of this scope
+Contains reusable workflow skills that operate on the memory bank.
 
-### Issue N
+Current skills:
 
-# progress.md
-- Document what are the required scopes to complete the overall project and not only the current scope specified in the scope objective section.
-- This section is documented at scope level and not task level.
-- Follow the placeholders below to document the overall progress
-- This section is updated as we move forward in the project. We might split a given scope into new scopes, discard a given scope etc.
-- If project has more than one phase, we group scopes under each phase
+* `get-context` — load and summarize project state
+* `map-scopes` — define or reshape project scopes
+* `plan-scope` — break a scope into value delivery tasks
+* `reconcile-work` — reconcile implemented work with project memory
+* `run-tests` — validate changes using repository-native checks
 
-## Phase N
-### Completed
-- Scope 1
-- Scope 2
+## Operating model
 
-### Under Development
-Which scope is under development by the agent now?
-- Scope 3
+This system distinguishes between two kinds of agent work:
 
+1. **Direct implementation**
 
-### To be done
-- Scope 4
-- Scope 5
+   * used for clear coding tasks
+   * the agent edits code directly when the request is already well-defined
 
-### Key decisions to be made and Open Issues
-Open decisions and choices that affects the project solution and not decided yet
-- Decision 1
-- Decision 2
-  
+2. **Workflow-driven execution**
+
+   * used when the agent needs orientation, planning, scope mapping, reconciliation, or validation
+   * these workflows use the skills and memory bank files to keep work consistent
+
+## Design goals
+
+* keep context loading intentional
+* reduce unnecessary memory-bank reads
+* preserve durable technical decisions
+* make project planning explicit
+* keep execution aligned with implemented reality
+* remain simple enough to maintain as plain Markdown files
+
+## Who should read what
+
+* New human contributors: start with this file, then read `AGENTS.md`
+* Agent contributors: read `AGENTS.md`, then use `memory_bank/README.md` and the relevant skill
+* Contributors updating project state: follow the scaffolds in `memory_bank/scaffolds.md`
+
+## Notes
+
+This is intentionally a lightweight system.
+It is not a replacement for tests, code review, or repository-native tooling.
+It is a coordination layer that helps the agent use them more consistently.
