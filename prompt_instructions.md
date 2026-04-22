@@ -30,3 +30,23 @@ If the project has a single phase, leave it blank.
 4. `active_context.md` is pre-filled with VDTs descovered in the first interaction
 5. `progress.md` updated with current project achievement
 
+
+# Key Checkpoints - Commits
+**stph: start of phase**
+- When the `progress.md` is empty.
+
+**phpl: phase planned**
+- When `progress.md` is suggested. After map scopes skill.
+
+**edph: End of Phase**
+When the last scope was finished.
+
+**stsc: start of scope**
+- Before any register in `active_context.md` or `scope_context.md`
+
+**scpl: scope planned**
+- After `active_context.md` or `scope_context.md` are filled.
+
+**edsc: end of scope**
+- After reconcile
+- Every file in memory bank is filled and reflect was whas built
