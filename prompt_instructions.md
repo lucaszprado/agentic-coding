@@ -50,3 +50,7 @@ When the last scope was finished.
 **edsc: end of scope**
 - After reconcile
 - Every file in memory bank is filled and reflect was whas built
+
+### Git trailers
+- Step-Name=\<scope-name\> <br>
+- Cycle-Step=\<key-checkpoint-code\>
