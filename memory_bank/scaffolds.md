@@ -336,10 +336,10 @@ Guidelines:
 
 
 ## Implementation Notes
-Key constraints, patterns, and considerations specific to this scope not mentioned at the project level in the `tech_context.md` or `system_pattern.md` files.
+Relavant key constraints, patterns, and considerations specific to this scope not mentioned at the project level in the `tech_context.md` or `system_pattern.md` files. Only include them if relevant to shape the proposed solution among the probable possible solutions.
 
-Include:
-- Relevant system patterns to follow
+Typical Notes:
+- System patterns to follow
 - Dependencies (internal or external)
 - Technical constraints or decisions
 - References to other documentation

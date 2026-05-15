@@ -51,6 +51,10 @@ When the last scope was finished.
 - After reconcile
 - Every file in memory bank is filled and reflect was whas built
 
+**clts: cleaning up and testing**
+- After commit a bug resolution or code cleaning in the context of a project.
+
 ### Git trailers
+- Project-Name=\<project-name\> <br>
 - Step-Name=\<scope-name\> <br>
 - Cycle-Step=\<key-checkpoint-code\>
