@@ -23,3 +23,4 @@ Use this skill when the project needs initial scope discovery, project slicing, 
    - `progress.md` as the primary artifact
    - `system_patterns.md` and `tech_context.md` only if project-level decisions changed
 7. Keep the output at scope level, not VDT level.
+8. Comply with **Software development project definitions and best practices** stated in the `README.md` when mapping the scopes and (if the case) grouping them into phases.

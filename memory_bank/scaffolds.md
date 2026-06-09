@@ -14,27 +14,10 @@ What problem is the project trying to solve, and why does it matter?
 ## Objectives
 What outcomes should exist when the project succeeds?
 
-## Organization
-Use this section if the project can be decomposed into phases or major subdivisions.
-If not, this section may be omitted.
-Typical phases may be features, user stories, or subsystems.
-List phases here in order, for example:
-- Phase 1
-- Phase 2
-- Phase N
-
-## Phase <N>: <Phase name>
-<...> are placeholders for this header
-Describe the phase at a high level.
-If the project is a single phase, this header can be omitted.
-
-### Objectives
-What are the phase objectives?
-
-### Key Elements
+## Key Elements
 What are the main user flows, capabilities, or solution outputs?
 
-### Out of Scope, No Gos, and Open Questions
+## Out of Scope, No Gos, and Open Questions
 What is intentionally excluded for now?
 Which edge cases will not be handled yet?
 Which open questions remain unresolved?
@@ -411,9 +394,9 @@ Notes:
 # Progress
 
 ## Phase <N>: <Phase Name>
+If the project has many scopes, we organize them into phases to help us visualize the progress.
 <...> are placeholders for this header
-Group the scopes under the corresponding phases.
-If there's only one phase this header is the project name.
+If project has no phases, no need to classify scopes into phases.
 
 ### Scopes progress
 [ ] Scope Name – short description

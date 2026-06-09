@@ -4,12 +4,23 @@ The memory bank is the project-state layer for the coding agent. It should conta
 
 All files mentioned in this README.md are inside `memory_bank/`.
 
-# Software development project definitions
-Two concepts are important to understand the project development process: scope and value delivery tasks — VDT.
+# Software development project definitions and best practices
+Three concepts are important to understand the project development process: scope, value delivery tasks — VDT and phases.
+**Scopes**
 - A project is composed by one or more scopes.
-- Scopes are integrated slices of work that delivers a clear, testable increment and can be completed **independently** or with minimal dependency on other scopes.
-- A good scope minimizes context switching and keeps code review manageable (ideally less than 10 files substantially changed).
+- Scopes are integrated slices of work that delivers a clear, testable increment, and whenever it is possible, can be completed **independently** or with minimal dependency on other scopes.
+- A good scope minimizes context switching and keeps code review manageable – **ideally less than 10 files substantially changed**.
+- As the project is built and our understanding about what's been building increases (dependencies and how things are actually wired), new scopes migtht be discovered and existants scopes might disappear or merged into another scopes.
+
+**Value Delivery Tasks — VDTs**
 - A scope is broken into value deliver tasks — VDTs, which are the concrete pieces of work required to complete that scope.
+
+**Phases**
+- Phases are categories used to group scopes to help us organize and visualize the work to be done.
+- Typical phases may be features, user stories, or subsystems.
+- **Ideally when a project is mapped into more than 10 scopes**, phases might used.
+- As for the scopes, new phases migtht be created, merged or removed as the project moves forward.
+
 
 # Reading order
 Read files in this order:
