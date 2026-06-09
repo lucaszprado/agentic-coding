@@ -25,13 +25,22 @@ If the project has a single phase, leave it blank.
 
 ## Key instructions to build the prompt
 1. `project_bref.md` keeps the same structure from the first prompt: describe overall project ans list phases.
-2. `tech_context` and `system_patterns` brings only project level information.
+2. `tech_context.md` and `system_patterns.md` brings only project level information.
 3. `scope_context.md` now describes the scope under development (not the first phase of the project anymore)
 4. `active_context.md` is pre-filled with VDTs descovered in the first interaction
 5. `progress.md` updated with current project achievement
 
 
 # Key Checkpoints - Commits
+**stpj: start of project**
+- When the `progress.md` is empty and we have no (if any) phase based organization.
+- We have the `project_brief.md` and initial constraints in `tech_context.md` and `system_patterns.md`
+
+**edpj: end of project**
+- Every scope from each planned phase is concluded.
+- `tech_context.md` and `system_patterns.md` reflects the patterns adopted in the project.
+
+
 **stph: start of phase**
 - When the `progress.md` is empty.
 
