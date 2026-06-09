@@ -141,6 +141,8 @@ These patterns should guide consistent implementation across scopes.
 - Pre-selected patterns to be used in this project
 
 ## Current Patterns
+- Architectural patterns used in this repo that are relevant to the current project
+- Pre-selected patterns to be used in this project
 
 ## Pre-selected patterns
 - Along the projet we might need to make pattern decisions to develiver the features and behaviors we want.
