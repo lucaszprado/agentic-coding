@@ -126,11 +126,10 @@ The following is an example of how a `scope_context.md` file may look.
 # Scaffold: system_patterns.md
 
 ## Purpose
-This document captures the recurring architectural patterns and design decisions used across the project.
-Each pattern explains:
-- the context in which it applies
-- the decision made
-- the rationale behind it
+This document summarizes architectural patterns and design decisions used across the project:
+i) Key patterns used in the repo
+ii) Pre-selected patterns to be used in project (mapped when making the discovery about the project)
+iii) Key pattern decisions made in the course or the project.
 
 These patterns should guide consistent implementation across scopes.
 
@@ -138,31 +137,46 @@ These patterns should guide consistent implementation across scopes.
 
 ```md
 # System Patterns
+- Patterns used in this repo that are relevant to the current project
+- Pre-selected patterns to be used in this project
 
-##  <Pattern name>
+## Current Patterns
+
+## Pre-selected patterns
+- Along the projet we might need to make pattern decisions to develiver the features and behaviors we want.
+- This sections list which patterns were already overviewed for each of those fatures and why we considered them a good option.
+- If no pattern was analysed in advance, this section is blank.
+
+## Changes to the existing patterns
+
+###  <Pattern name>
 - <...> are placeholders for this header
 - Short, descriptive name for the pattern (e.g., "Source as Polymorphic Ingestion Layer")
 
-### Key Context
+#### Key Context
 - What problem or constraint led to this pattern?
 - When should this pattern be applied?
 - Make a briefly description.
 
-### Decision
+#### Alternatives Considered
+- What were the alternatives (if more than one) we considered when making the decision.
+
+#### Decision
 - What architectural choice was made?
 - Why this approach was chosen over alternatives?
-- Make a briefly description.
+- If only one architectural patterns was considered list its pros and cons.
+- Common criterias used to justify a solution: simplicity, ecosystem, performance, integration, cost
 
-### Implementation Shape
+#### Implementation Shape
 - How this pattern is implemented in the codebase
 - Key models, modules, or flows involved
 - Bring most relevant cases to explain the pattern. It should not be an exaustive approach.
 
-### Trade-offs
+#### Trade-offs
 - Downsides or limitations of this pattern
 - When it might not be appropriate
 
-### Pattern Key Words
+#### Decision Key Words
 What are the key words related to this pattern.
 Write up to 3 key words. From the most to the last relevant.
 
@@ -174,31 +188,40 @@ The following is an example of how a `system_pattern.md` file may look.
 ```md
 # System Patterns
 
-## Source as Polymorphic Ingestion Layer
+## Current Patterns
 
-### Context
+## Pre-selected patterns
+
+## Changes to the existing patterns
+
+### Source as Polymorphic Ingestion Layer
+
+#### Context
 - The system needs to ingest multiple types of health data (blood exams, imaging reports, prescriptions, etc.)
 - Each data type has different structures but shares a common ingestion and storage flow
 - The system must remain flexible to support new data types in the future
 
-### Decision
+#### Alternatives Considered
+- Polymorphic association
+
+#### Decision
 - Use a polymorphic `Source` model as the central ingestion layer
 - Each domain entity (e.g., ImagingDiagnostic, BloodExam, Prescription) is associated with one or more Sources
 - This allows all ingestion flows (upload, API, WhatsApp) to be standardized
 
-### Implementation Shape
+#### Implementation Shape
 - `Source` model with `source_type` and polymorphic association (`sourceable`)
 - `Source` has attachments via ActiveStorage (`files`)
 - Domain models (e.g., ImagingDiagnostic) `has_many :sources`
 - Ingestion pipelines always create a Source first, then associate downstream data
 - Controllers and services operate primarily through Source
 
-### Trade-offs
+#### Trade-offs
 - Adds indirection when querying domain-specific data
 - Requires careful handling of polymorphic associations in queries
 - Some validations must be conditional based on source type
 
-### Pattern Key Words
+#### Pattern Key Words
 - polymorphism
 - ingestion-layer
 - abstraction
@@ -208,40 +231,66 @@ The following is an example of how a `system_pattern.md` file may look.
 # Scaffold: tech_context.md
 
 ## Purpose
-This document captures the key technology decisions made in the project.
+This document summarizes:
+i) Key technologies used in the repo
+ii) Pre-selected technologies to be used in project (mapped when making the discovery about the project)
+iii) Key technological decisions made in the course or the project.
 
-Each entry explains:
-- the context that led to the choice
-- the selected technology
-- how it is used in the system
+When a new technological decision is made, we register:
+- the context of hte decision: what were the requirements?
+- the selected technology and other (if any) alternatives considered
+- how the decision is used or presented in the system
 
 This helps maintain consistency and supports future migrations or refactors.
 
 ## Required Structure
 
 ```md
-## <Decision Name>
+
+## Current Stack
+- Technologies used in this repo that are relevant to the current project
+- Pre-selected technologies to be used in this project
+
+
+## Pre-selected technologies
+- Along the projet we might need to make technological decisions to develiver the features and behaviors we want.
+- This sections list which technoligies were already overviewed for each oh those fatures and why we considered them a good option.
+- If no technology was analysed in advance, this section is blank.
+
+## Changes to the current stack
+
+### <Decision Name>
 - <...> are placeholders for this header
 - Short, descriptive name of the technology decision (e.g., "ActiveStorage for File Handling")
 
-### Context
+#### Context
 - What problem or constraint led to this decision?
 - Keep it concise and focused
 
-### Decision
+#### Alternatives Considered
+- What were the alternatives (if more than one) we considered when making the decision.
+
+#### Decision
 - What technology or stack choice was made?
 - Why this approach was chosen over alternatives?
-- Key factors (e.g., simplicity, ecosystem, performance, integration)
+- If only one technology was considered list its pros and cons.
+- Common criterias used to justify a solution: simplicity, ecosystem, performance, integration, cost
 
-### Implementation Shape
+
+#### Implementation Shape
 - Where this technology is used (backend, frontend, infrastructure)
 - How it is integrated into the codebase (key models, services, or configs)
 - Any important constraints, conventions, or workarounds
 - Focus on representative examples, not exhaustive coverage
 
-### Trade-offs
+#### Trade-offs
 - Limitations or downsides of this choice
 - Known risks or future migration considerations
+
+
+#### Decision key words
+- What are the key words related to this decision.
+- Write up to 3 key words. From the most to the last relevant.
 
 ```
 
@@ -251,19 +300,39 @@ The following is an example of how a `tech_context.md` file may look.
 ```md
 # Tech Context
 
-## ActiveStorage with S3 for File Storage
+## Current Stack
+- Hotwire used to bring interactivity to the web pages
+- Redis used as cache memory
 
-### Context
+
+## Pre-selected technologies
+- Tailwind was analysed to bring more modern layout to the application.
+- It intgerates easily with Rails.
+
+## Changes to the current stack
+
+### ActiveStorage with S3 for File Storage
+
+#### Context
 - The system needs to store and serve user-uploaded medical files (PDFs, images, DICOM)
 - Files can be large and must be reliably accessible and scalable
 - Local storage is not suitable for production environments
 
-### Decision
+#### Alternatives Considered
+- ActiveStorage with S3
+- Local disk storage (rejected due to lack of scalability)
+- Direct S3 SDK usage (rejected due to higher complexity)
+- Third-party services (e.g., Cloudinary) (rejected to maintain control and reduce costs)
+
+#### Decision
 - Use Rails ActiveStorage with AWS S3 as the storage backend
 - Chosen due to tight Rails integration, ease of use, and native support for cloud storage
 - Avoided custom upload pipelines to reduce complexity and speed up development
+- Local disk storage: rejected due to lack of scalability
+- Direct S3 SDK usage: rejected due to higher complexity
+- Third-party services: (e.g., Cloudinary) rejected to maintain control and reduce costs
 
-### Implementation Shape
+#### Implementation Shape
 - Backend: Rails (ActiveStorage)
 - Infrastructure: AWS S3 bucket for file storage
 - `Source` model uses `has_many_attached :files`
@@ -272,15 +341,14 @@ The following is an example of how a `tech_context.md` file may look.
 - Environment-specific configuration in `storage.yml`
 - Used alongside WebP processing pipeline for images
 
-### Trade-offs
+#### Trade-offs
 - Limited control compared to a fully custom file handling system
 - Performance depends on S3 latency
 - Requires additional configuration for secure access (signed URLs, permissions)
 
-### Alternatives Considered
-- Local disk storage (rejected due to lack of scalability)
-- Direct S3 SDK usage (rejected due to higher complexity)
-- Third-party services (e.g., Cloudinary) (rejected to maintain control and reduce costs)
+#### Decision Key Words
+- Storage
+- Scalability
 
 ```
 
