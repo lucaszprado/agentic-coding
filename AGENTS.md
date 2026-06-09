@@ -24,8 +24,6 @@ Prefer workflow skills for context loading, planning, project slicing, reconcili
 When implementation depends on missing project context or unresolved scope boundaries, invoke the appropriate workflow skill before coding.
 
 
-
-
 ## Core behavior rules
 - Prefer scope boundaries that produce integrated, testable increments with low cross-scope dependency.
 - Keep changes reviewable and localized when possible.

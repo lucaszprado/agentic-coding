@@ -4,6 +4,7 @@ description: Map or reshape project scopes, discuss trade-offs, and update scope
 ---
 
 Use this skill when the project needs initial scope discovery, project slicing, or major rescoping.
+All files mentioned in this skill are inside `memory_bank/`
 
 ## Instructions
 1. Read only the memory bank files relevant to this workflow located at `memory_bank/`:
@@ -23,4 +24,4 @@ Use this skill when the project needs initial scope discovery, project slicing, 
    - `progress.md` as the primary artifact
    - `system_patterns.md` and `tech_context.md` only if project-level decisions changed
 7. Keep the output at scope level, not VDT level.
-8. Comply with **Software development project definitions and best practices** stated in the `README.md` when mapping the scopes and (if the case) grouping them into phases.
+8. Comply with **Software development project definitions and best practices** stated in the `memory_bank/README.md` when mapping the scopes and (if the case) grouping them into phases.

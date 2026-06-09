@@ -6,7 +6,7 @@ description: Run the appropriate verification commands for the current change, i
 Use this skill when validating a change before completion or when the user explicitly asks for test execution.
 
 ## Instructions
-1. Read `AGENTS.md`, `memory_bank/tech_context.md`, and any repository docs that define the test workflow.
+1. Read `memory_bank/tech_context.md`, and any repository docs that define the test workflow.
 2. Determine the narrowest useful test scope first.
 3. Prefer fast validation before broad suites.
 4. Report:

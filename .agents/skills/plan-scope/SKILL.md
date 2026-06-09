@@ -4,10 +4,11 @@ description: Turn the current scope into concrete value delivery tasks, implemen
 ---
 
 Use this skill when a scope is selected and the next step is to define how it will be delivered.
+All files mentioned in this skill are inside `memory_bank/`
 
 ## Instructions
 1. Read only the memory bank files relevant to this workflow located at `memory_bank/`:
-2. Focus on `scope_context.md` and `progress.md`
+  - Focus on `scope_context.md` and `progress.md`
 3. Break the scope into VDTs that produce a clear, testable increment.
 4. Prefer slices that reduce file sprawl and avoid unnecessary context switching.
 5. Explain important implementation trade-offs and dependencies.

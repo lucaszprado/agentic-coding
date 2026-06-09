@@ -4,6 +4,7 @@ description: Reconcile implementation with the memory bank, update progress, and
 ---
 
 Use this skill when a scope or a meaningful part of it has been implemented and documentation must be synchronized.
+All files mentioned in this skill are inside `memory_bank/`
 
 ## Instructions
 1. Read only the memory bank files relevant to this workflow located at `memory_bank/`:
