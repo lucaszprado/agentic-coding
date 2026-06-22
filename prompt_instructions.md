@@ -36,22 +36,41 @@ If the project has a single phase, leave it blank.
 - When the `progress.md` is empty and we have no (if any) phase based organization.
 - We have the `project_brief.md` and initial constraints in `tech_context.md` and `system_patterns.md`
 
+**pjpl: project planned**
+- Doubts, decisions and issues about project objectives and key elements were solved. Only what can be solved yet remains open.
+- Project inital scope mapping concluded.
+- `progress.md` contais the scopes and phases to deliver the project
+
+
 **edpj: end of project**
 - Every scope from each planned phase is concluded.
 - `tech_context.md` and `system_patterns.md` reflects the patterns adopted in the project.
 
 
+˜˜
 **stph: start of phase**
 - When the `progress.md` is empty.
+˜˜
+Why: No need to mark the start of phase. Since we're planning per scope.
 
+˜˜
 **phpl: phase planned**
 - When `progress.md` is suggested. After map scopes skill.
+˜˜
+Why: No need to mark the planning of phase. Since we're planning per scope.
 
+˜˜
 **edph: End of Phase**
 When the last scope was finished.
+˜˜
+Why: No need to mark the end of a phase since we're planning per scope
 
+
+˜˜
 **stsc: start of scope**
 - Before any register in `active_context.md` or `scope_context.md`
+˜˜
+Why: No need to mark the start of scope. Since from the last state it doens't change anything.
 
 **scpl: scope planned**
 - After `active_context.md` or `scope_context.md` are filled.
@@ -65,5 +84,5 @@ When the last scope was finished.
 
 ### Git trailers
 - Project-Name=\<project-name\> <br>
-- Step-Name=\<scope-name\> <br>
-- Cycle-Step=\<key-checkpoint-code\>
+- Cycle-Step=\<key-checkpoint-code\> <br>
+- Step-Name=\<scope-name\>

@@ -7,6 +7,8 @@ Describe the overall project goals and organization.
 
 ```md
 # Project Brief
+## Project Name
+What's the project name?
 
 ## Problem
 What problem is the project trying to solve, and why does it matter?
@@ -29,6 +31,9 @@ The following is an example of how a `project_brief.md` file may look.
 
 ```md
 # Project Brief
+
+## Project Name
+Instant Reply Chat
 
 ## Problem
 Users cannot easily unify and query their personal health records across providers.
@@ -444,7 +449,7 @@ This document tracks the evolution of the project at the scope level.
 It provides:
 - a high-level view of all scopes required to complete the project
 - the current status of each scope
-- key open decisions impacting the overall system
+- key decisions impacting the project outcomes
 
 Notes:
 - This file operates at scope granularity (not VDT level)
@@ -475,9 +480,10 @@ If project has no phases, no need to classify scopes into phases.
 [o] Scope Name – short description
 
 
-### Open Decisions & Issues
+### Key Decisions & Issues
 
 #### Decision <N>: <Decision Name>
+- Status: Open or already decided?
 - Description: What is the decision or issue?
 - Impact: Why does it matter for the overall project?
 - Options: What are the possible approaches?
@@ -506,8 +512,9 @@ The following is an example of how a `progress.md` file may look.
 [ ] Longitudinal Health Timeline – Track user data evolution over time
 [ ] Alerting System – Detect abnormal patterns in user data
 
-## Open Decisions & Issues
+## Key Decisions & Issues
 #### Decision 1: OCR Strategy
+- Status: Open
 - Description: Whether to use AWS Textract or an LLM-based OCR pipeline
 - Impact: Affects accuracy, cost, and system complexity
 - Options:
@@ -516,10 +523,9 @@ The following is an example of how a `progress.md` file may look.
 - Next Step: Run benchmark on real user PDFs
 
 #### Decision 2: Sync vs Async Processing
-- Description: Whether ingestion should remain synchronous or move to background jobs
+- Status: Decided
+- Description: Ingestion should be async.
 - Impact: Affects performance and system scalability
-- Options:
-  - Keep synchronous (simpler, faster to build)
-  - Introduce background jobs (more scalable, more complex)
-- Next Step: Evaluate average processing time and failure rate
+- Implementation Reference: `app/jobs/ingestion_pipeline_job`
+- Next Step: Reuse `app/jobs/ingestion_pipeline_job` when planning the ingestion pipeline.
 ```
