@@ -48,28 +48,22 @@ If the project has a single phase, leave it blank.
 
 
 
-˜˜**stph: start of phase**˜˜
+~~**stph: start of phase**~~
 - When the `progress.md` is empty.
-
 Why: No need to mark the start of phase. Since we're planning per scope.
 
-˜˜
-**phpl: phase planned**
+~~**phpl: phase planned**~~
 - When `progress.md` is suggested. After map scopes skill.
-˜˜
 Why: No need to mark the planning of phase. Since we're planning per scope.
 
-˜˜
-**edph: End of Phase**
+
+~~**edph: End of Phase**~~
 When the last scope was finished.
-˜˜
 Why: No need to mark the end of a phase since we're planning per scope
 
 
-˜˜
-**stsc: start of scope**
+~~**stsc: start of scope**~~
 - Before any register in `active_context.md` or `scope_context.md`
-˜˜
 Why: No need to mark the start of scope. Since from the last state it doens't change anything.
 
 **scpl: scope planned**
