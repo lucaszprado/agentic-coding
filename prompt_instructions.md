@@ -47,10 +47,10 @@ If the project has a single phase, leave it blank.
 - `tech_context.md` and `system_patterns.md` reflects the patterns adopted in the project.
 
 
-˜˜
-**stph: start of phase**
+
+˜˜**stph: start of phase**˜˜
 - When the `progress.md` is empty.
-˜˜
+
 Why: No need to mark the start of phase. Since we're planning per scope.
 
 ˜˜
