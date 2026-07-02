@@ -151,7 +151,7 @@ These patterns should guide consistent implementation across scopes.
 
 ## Pre-selected patterns
 - Along the projet we might need to make pattern decisions to develiver the features and behaviors we want.
-- This sections list which patterns were already overviewed for each of those fatures and why we considered them a good option.
+- This section lists which patterns were already overviewed for each of the features the project implements and why we considered them a good option. If you have another alternative and consider it better, please advise.
 - If no pattern was analysed in advance, this section is blank.
 
 ## Changes to the existing patterns
@@ -261,7 +261,7 @@ This helps maintain consistency and supports future migrations or refactors.
 
 ## Pre-selected technologies
 - Along the projet we might need to make technological decisions to develiver the features and behaviors we want.
-- This sections list which technoligies were already overviewed for each oh those fatures and why we considered them a good option.
+- This section lists which technoligies were already overviewed for each of the features the project implements and why we considered them a good option. If you have another alternative and consider it better, please advise.
 - If no technology was analysed in advance, this section is blank.
 
 ## Changes to the current stack
