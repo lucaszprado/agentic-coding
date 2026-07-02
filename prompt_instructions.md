@@ -35,48 +35,56 @@ If the project has a single phase, leave it blank.
 **stpj: start of project**
 - When the `progress.md` is empty and we have no (if any) phase based organization.
 - We have the `project_brief.md` and initial constraints in `tech_context.md` and `system_patterns.md`
+<br>
 
 **pjpl: project planned**
 - Doubts, decisions and issues about project objectives and key elements were solved. Only what can be solved yet remains open.
 - Project inital scope mapping concluded.
 - `progress.md` contais the scopes and phases to deliver the project
-
+<br>
 
 **edpj: end of project**
 - Every scope from each planned phase is concluded.
 - `tech_context.md` and `system_patterns.md` reflects the patterns adopted in the project.
-
-
+<br>
 
 ~~**stph: start of phase**~~
-- When the `progress.md` is empty.
-Why: No need to mark the start of phase. Since we're planning per scope.
+- When the `progress.md` is empty. <br>
+**Why**: No need to mark the start of phase. Since we're planning per scope.
+<br>
 
 ~~**phpl: phase planned**~~
-- When `progress.md` is suggested. After map scopes skill.
-Why: No need to mark the planning of phase. Since we're planning per scope.
+- When `progress.md` is suggested. After map scopes skill. <br>
+**Why**: No need to mark the planning of phase. Since we're planning per scope.
+<br>
 
 
 ~~**edph: End of Phase**~~
-When the last scope was finished.
-Why: No need to mark the end of a phase since we're planning per scope
+When the last scope was finished. <br>
+**Why**: No need to mark the end of a phase since we're planning per scope
+<br>
 
 
 ~~**stsc: start of scope**~~
-- Before any register in `active_context.md` or `scope_context.md`
-Why: No need to mark the start of scope. Since from the last state it doens't change anything.
+- Before any register in `active_context.md` or `scope_context.md` <br>
+**Why**: No need to mark the start of scope. Since from the last state it doens't change anything.
+<br>
 
 **scpl: scope planned**
 - After `active_context.md` or `scope_context.md` are filled.
+<br>
 
 **edsc: end of scope**
 - After reconcile
 - Every file in memory bank is filled and reflect was whas built
+- After this Cycle Step checkpoint or commit, `active_context.md` or `scope_context.md` are erased.
+<br>
 
 **clts: cleaning up and testing**
 - After commit a bug resolution or code cleaning in the context of a project.
+<br>
 
 ### Git trailers
 - Project-Name=\<project-name\> <br>
-- Cycle-Step=\<key-checkpoint-code\> <br>
-- Step-Name=\<scope-name\>
+- Step-Name=\<scope-name\> <br>
+- Cycle-Step=\<key-checkpoint-code\>
