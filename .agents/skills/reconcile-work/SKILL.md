@@ -12,7 +12,7 @@ All files mentioned in this skill are inside `memory_bank/`
 2. Inspect what was actually implemented.
 3. Compare codebase implementation against what is written in `active_context.md` and `progress.md`
 4. Update:
-   - `active_context.md` to reflect completed and pending VDTs
+   - `active_context.md` to reflect completed and pending VDTs. In this file replace **Guidance** per **Outcome** and describe what was effectively implemented
    - `progress.md` to reflect scope-level progress
    - `system_patterns.md` and `tech_context.md` only when implementation introduced durable changes
 5. Call out mismatches between the documented plan and the implemented reality.
