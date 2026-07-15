@@ -38,7 +38,7 @@ If the project has a single phase, leave it blank.
 <br>
 
 **pjpl: project planned**
-- Doubts, decisions and issues about project objectives and key elements were solved. Only what can be solved yet remains open.
+- Doubts, decisions and issues about project objectives and key elements were solved. Only what can't be solved yet remains open.
 - Project inital scope mapping concluded.
 - `progress.md` contais the scopes and phases to deliver the project
 <br>
@@ -84,7 +84,11 @@ When the last scope was finished. <br>
 - After commit a bug resolution or code cleaning in the context of a project.
 <br>
 
+
 ### Git trailers
 - Project-Name=\<project-name\> <br>
 - Step-Name=\<scope-name\> <br>
 - Cycle-Step=\<key-checkpoint-code\>
+
+### Git commit message standard
+git commit -m "\<Commit message\>" --trailer "Project-Name=instant-chat-reply" --trailer "Step-Name=$(kebab "File Message Handoff")" --trailer "Cycle-Step=clts"
